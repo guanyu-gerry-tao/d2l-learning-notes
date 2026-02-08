@@ -1,0 +1,6 @@
+graph LR
+    A["Input Image<br/>28x28"] --> B["Flatten<br/>-> 784"]
+    B --> C["Linear Layer<br/>O = XW + b"]
+    C --> D["Softmax<br/>-> Prob"]
+    D --> E["argmax<br/>Predict"]
+    D --> F["Cross-Entropy<br/>Loss"]
