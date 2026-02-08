@@ -1,0 +1,11 @@
+graph LR
+    X["输入 x<br/>(d 维)"] --> |"W⁽¹⁾x + b⁽¹⁾"| Z["线性变换 z"]
+    Z --> |"σ(z)"| H["隐藏层 h<br/>(激活后)"]
+    H --> |"W⁽²⁾h + b⁽²⁾"| O["输出 o<br/>(q 维)"]
+    O --> |"softmax"| Y["预测概率 ŷ"]
+
+    style X fill:#e1f5fe
+    style Z fill:#fff3e0
+    style H fill:#e8f5e9
+    style O fill:#fff3e0
+    style Y fill:#fce4ec

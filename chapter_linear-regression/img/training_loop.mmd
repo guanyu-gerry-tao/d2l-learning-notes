@@ -1,0 +1,15 @@
+graph TD
+    A["初始化权重（随机）"] --> B
+
+    subgraph epoch ["重复多个 Epoch"]
+        subgraph batch ["遍历所有 mini-batch"]
+            B["取一个 mini-batch"] --> C["前向传播：计算预测值"]
+            C --> D["计算损失：预测 vs 真实"]
+            D --> E["反向传播：计算梯度"]
+            E --> F["更新权重：w = w - lr × 梯度"]
+            F --> G["清零梯度"]
+            G --> B
+        end
+        batch --> H["在测试集上评估精度"]
+        H --> batch
+    end

@@ -1,0 +1,22 @@
+graph TD
+    A["MLP 是什么？<br/>mlp.ipynb"] --> B["从零实现<br/>mlp-scratch.ipynb"]
+    B --> C["简洁实现<br/>mlp-concise.ipynb"]
+    C --> D["模型太好也有问题<br/>过拟合 vs 欠拟合"]
+    D --> E["解药1：权重衰减<br/>weight-decay.ipynb"]
+    D --> F["解药2：Dropout<br/>dropout.ipynb"]
+    E --> G["训练到底怎么算的？<br/>反向传播 backprop.ipynb"]
+    F --> G
+    G --> H["数值稳定性 & 初始化<br/>numerical-stability.ipynb"]
+    H --> I["现实世界的坑<br/>分布偏移 environment.ipynb"]
+    I --> J["实战：Kaggle 房价<br/>kaggle-house-price.ipynb"]
+
+    style A fill:#e3f2fd
+    style B fill:#e3f2fd
+    style C fill:#e3f2fd
+    style D fill:#fff3e0
+    style E fill:#e8f5e9
+    style F fill:#e8f5e9
+    style G fill:#f3e5f5
+    style H fill:#f3e5f5
+    style I fill:#fce4ec
+    style J fill:#fff9c4

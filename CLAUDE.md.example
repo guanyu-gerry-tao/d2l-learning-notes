@@ -1,0 +1,55 @@
+# CLAUDE.md — Study Notes Style Guide
+
+> **Template & Reference:** Use [`chapter_linear-regression/notes.md`](chapter_linear-regression/notes.md) as the standard example. New chapter notes should follow its structure, style, and level of detail.
+
+## Notes Structure
+
+Create a `notes.md` in each chapter directory, divided into **three parts**:
+
+### Part 1: Intuition
+- **Goal:** Explain the chapter's principles thoroughly in pure natural language, matching the depth of Part 2 (Math), but with **zero formulas, zero code**
+- **Not an overview, not a summary** — rather, explain every concept and every reasoning step using intuition, analogies, and causal chains, so that a smart person without math background can **truly understand why things are done this way and how the mechanisms work**
+- **Not translating formulas into words** (e.g., "the prediction equals weight times feature plus bias" is just translation — don't do this). Instead, explain **the reasoning behind it** (e.g., "each feature has a different influence on the result; the model needs to learn how to assign an importance level to each feature, then aggregate their weighted influences to make a prediction")
+- **Depth requirement:** Every concept covered in Part 2 (Math) must have a corresponding natural language explanation here. This includes but is not limited to:
+  - What the model is doing and why it's designed this way
+  - What the loss function measures and why this one was chosen over alternatives
+  - The intuitive meaning of gradients — what direction they tell parameters to adjust and by how much
+  - What happens at each step during optimization
+  - Causal relationships between concepts: why A leads to B, why B requires C
+- **Must include a concrete scenario walkthrough:** Use a specific hypothetical scenario (e.g., house price prediction, cat/dog classification) to walk through the complete process from start to finish in natural language — no numerical calculations, but clearly explain what happens at each step, how information flows, and what the model is "thinking"
+- **Structure strictly aligned with Part 2:** Whatever section order and subsection divisions Part 2 uses, Part 1 uses the same. Readers can read section by section in parallel — first read Intuition to understand "why," then read Math for precise formulations
+- **Comparisons and distinctions:** Why different methods differ, when to use which, and their respective pros and cons. Use comparison tables to assist
+- Generate flowcharts using mermaid (`npx @mermaid-js/mermaid-cli`), save as PNG to the `img/` subdirectory
+- Reference images using HTML `<img>` tags with size limits: `<img src="img/xxx.png" alt="description" style="max-width:640px; max-height:600px;">`
+- Use markdown tables for simple comparisons
+- Optionally add a "Next Chapter Preview" at the end to connect chapters
+- **Absolutely forbidden:** LaTeX formulas, code blocks, variable symbols (e.g., $w$, $x$). You may use English terms like "weights," "features," etc.
+
+### Part 2: Math
+- Focus on mathematical principles, formula derivations, and concept explanations
+- **Heavy on formulas, light on code**
+- Write formulas in LaTeX syntax (for viewing in Markdown renderers)
+- **Every formula must be numbered:** Use `\tag{X.Y}` format (X = major section number, Y = incremental within subsection), e.g., `\tag{1.1}`, `\tag{2.3}`
+- After every non-trivial formula, immediately follow with a `>` blockquote explaining the symbol meanings and what the formula does (explain directly, no prefixes like "in plain terms")
+- Formulas can cross-reference each other using `\tag` numbers, e.g., "see formula (1.3)"
+- Insert **comparison tables** for relationships and contrasts between concepts
+- End of the math section should include a **Key Concepts Summary Table:** a single table summarizing all methods in the chapter across dimensions like model, loss, gradient, optimization, etc.
+- **Numerical Walkthrough Example:** After completing the core formula chain, use specific hypothetical data (e.g., cat/dog/bird classification) to walk through the complete calculation process from start to finish (forward pass → loss → gradient), grounding every formula in concrete numbers
+
+### Part 3: Code Implementation
+- Corresponds to each ipynb's code implementation
+- Focus on code implementation and API usage
+- **Heavy on code, light on formulas**
+- From-scratch implementation vs. framework concise implementation comparison
+- Key code snippets + annotated explanations
+- Common pitfalls and important notes
+
+## Reference Links
+
+- List all corresponding ipynb links at the top of notes.md
+- Annotate section titles in the Math and Code parts with `<sub>` tags linking to the corresponding notebook, e.g.: `## 1. Linear Regression <sub>([linear-regression.ipynb](linear-regression.ipynb))</sub>`
+
+## Important Constraints
+
+- **Do not modify any `.ipynb` files** — these are the original text, read-only references
+- Only create and edit `notes.md`, `notes-zh.md`, images in `chapter_xxx/img/` directories, and auxiliary files in the project root (e.g., PROGRESS.md, CLAUDE.md)

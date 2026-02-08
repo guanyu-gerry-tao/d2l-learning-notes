@@ -1,0 +1,6 @@
+graph LR
+    A["输入图片<br/>28×28"] --> B["展平<br/>Flatten → 784维"]
+    B --> C["全连接层<br/>O = XW + b"]
+    C --> D["Softmax<br/>→ 概率"]
+    D --> E["argmax<br/>预测类别"]
+    D --> F["交叉熵损失"]

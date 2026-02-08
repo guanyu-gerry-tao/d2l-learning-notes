@@ -1,0 +1,28 @@
+graph LR
+    subgraph 输入层
+        X["x = 37°C<br/>体温"]
+    end
+
+    subgraph 隐藏层["隐藏层 (ReLU)"]
+        H1["h₁ = ReLU(-37+35)<br/>= ReLU(-2) = <b>0</b><br/><i>失温检测器</i>"]
+        H2["h₂ = ReLU(37-36)<br/>= ReLU(1) = <b>1</b><br/><i>微热检测器</i>"]
+        H3["h₃ = ReLU(37-38)<br/>= ReLU(-1) = <b>0</b><br/><i>高热检测器</i>"]
+    end
+
+    subgraph 输出层
+        Y["ŷ = 2×0 - 1 + 2×0<br/>= <b>-1</b><br/><i>安全（负=正常）</i>"]
+    end
+
+    X -->|"w₁=-1, b₁=35"| H1
+    X -->|"w₂=1, b₂=-36"| H2
+    X -->|"w₃=1, b₃=-38"| H3
+
+    H1 -->|"×2"| Y
+    H2 -->|"×(-1)"| Y
+    H3 -->|"×2"| Y
+
+    style X fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    style H1 fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style H2 fill:#fff3e0,stroke:#ef6c00,stroke-width:2px
+    style H3 fill:#fce4ec,stroke:#c62828,stroke-width:2px
+    style Y fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px

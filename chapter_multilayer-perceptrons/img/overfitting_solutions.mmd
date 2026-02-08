@@ -1,0 +1,16 @@
+graph TD
+    P["模型太复杂 → 过拟合"] --> W["权重衰减<br/>Weight Decay"]
+    P --> D["暂退法<br/>Dropout"]
+    P --> E["早停<br/>Early Stopping"]
+    P --> M["减少模型容量"]
+
+    W --> |"损失 + λ/2 · ||w||²"| R1["让权重保持小值<br/>限制模型复杂度"]
+    D --> |"训练时随机丢弃神经元"| R2["防止神经元共适应<br/>相当于集成学习"]
+
+    style P fill:#ffcdd2
+    style W fill:#e8f5e9
+    style D fill:#e8f5e9
+    style E fill:#e8f5e9
+    style M fill:#e8f5e9
+    style R1 fill:#f1f8e9
+    style R2 fill:#f1f8e9
