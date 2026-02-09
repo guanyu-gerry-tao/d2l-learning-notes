@@ -1,0 +1,12 @@
+graph TD
+    subgraph Covariate["Covariate Shift"]
+        A1["P(x) changed"] --> B1["P(y|x) same"]
+        B1 --> C1["Solution: Importance Weighting"]
+    end
+    subgraph Label["Label Shift"]
+        A2["P(y) changed"] --> B2["P(x|y) same"]
+        B2 --> C2["Solution: Confusion Matrix"]
+    end
+    subgraph Concept["Concept Shift"]
+        A3["P(y|x) changed"] --> C3["Solution: Retrain"]
+    end
