@@ -35,3 +35,5 @@ latex_style/*
 static/latex_style/*
 temp/
 CLAUDE.md
+
+.LEARNING/

@@ -1,0 +1,16 @@
+flowchart TD
+    A["🖼️ 输入图像<br/>(H×W×C)"] --> B{"全连接？"}
+    B -->|"参数爆炸 + 忽略空间结构"| C["❌ 不适合图像"]
+    B -->|"利用局部性 + 权重共享"| D["✅ 卷积层"]
+    D --> E["局部特征提取<br/>边缘 / 纹理 / 角点"]
+    E --> F["ReLU 激活<br/>引入非线性"]
+    F --> G["汇聚层<br/>下采样 + 平移不变性"]
+    G --> H{"需要更高级特征？"}
+    H -->|"是"| D
+    H -->|"否"| I["Flatten 展平"]
+    I --> J["全连接层<br/>分类决策"]
+    J --> K["输出类别概率"]
+
+    style C fill:#ffcccc,stroke:#cc0000
+    style D fill:#ccffcc,stroke:#00cc00
+    style K fill:#cceeff,stroke:#0088cc

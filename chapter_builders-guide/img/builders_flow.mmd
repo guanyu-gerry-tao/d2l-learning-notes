@@ -1,0 +1,8 @@
+flowchart TD
+    A["模型搭积木"] --> B["层与块\n(nn.Module)"]
+    B --> C["参数管理\n(state_dict)"]
+    C --> D["参数初始化\n(Xavier/He)"]
+    D --> E["延后初始化\n(Lazy)"]
+    E --> F["自定义层\n(custom layer)"]
+    F --> G["读写文件\n(save/load)"]
+    G --> H["GPU\n(device) "]
