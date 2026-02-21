@@ -76,6 +76,7 @@
 
 ## 9. Recurrent Neural Networks `chapter_recurrent-neural-networks`
 [Notes](chapter_recurrent-neural-networks/notes.md)
+[Notes-zh](chapter_recurrent-neural-networks/notes-zh.md)
 - [ ] sequence — Working with Sequences
 - [ ] text-sequence — Converting Raw Text into Sequence Data
 - [ ] language-model — Language Models

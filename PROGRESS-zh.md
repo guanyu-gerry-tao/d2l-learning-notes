@@ -31,12 +31,12 @@
 
 ## 7. Convolutional Neural Networks 卷积神经网络 `chapter_convolutional-neural-networks`
 [笔记](chapter_convolutional-neural-networks/notes-zh.md)
-- [ ] 原理理解
+- [x] 原理理解
 - [ ] 代码实现
 
 ## 8. Modern Convolutional Neural Networks 现代卷积神经网络 `chapter_convolutional-modern`
 [笔记](chapter_convolutional-modern/notes-zh.md)
-- [ ] 原理理解
+- [x] 原理理解
 - [ ] 代码实现
 
 ## 9. Recurrent Neural Networks 循环神经网络 `chapter_recurrent-neural-networks`
@@ -115,4 +115,4 @@
 - [ ] 代码实现
 
 ---
-*最后更新：2026-02-07*
+*最后更新：2026-02-21*
